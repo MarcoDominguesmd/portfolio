@@ -1,0 +1,85 @@
+//Mixins
+
+@mixin banner{
+  width: 100%;
+  position: relative;
+  color: white;
+  .banner-content{
+    position: absolute;
+    top: 50px;
+    width:100%;
+  }
+  img{
+    width: 100%
+  }
+  span{
+    font-size: $bannerHeading;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    @include mQ(3000px, 1200px){
+      font-size: 68px;
+    };
+    @include mQ(700px){
+      font-size: 30px;
+    };
+  }
+  span.title{
+    font-weight: normal;
+    margin-bottom: 30px;
+  }
+}
+
+@mixin clearFix{
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin grid($cols, $mgn){
+  float: left;
+  margin-right: $mgn;
+  margin-bottom: $mgn;
+  width: ((100% - (($cols - 1) * $mgn)) / $cols);
+  &:nth-child(#{$cols}n){
+    margin-right: 0;
+  }
+}
+
+@mixin mQ($arg...){
+  @if length($arg) == 1{
+    @media screen and (min-width: nth($arg , 1)){
+      @content;
+    }
+  }
+  @if length($arg) == 2{
+    @media screen and (min-width: nth($arg , 1)) and (max-width: nth($arg, 2)){
+      @content;
+    }
+  }
+}
+
+@mixin hoverMenu{
+  #text{
+    color: rgba(151, 212, 223, 0);
+    display: none;
+    float:left;
+    margin: 1em 2em 1em 1.5em;
+    transition: color .5s ease .5s;
+  }
+  &:hover{
+    background-color: $blue3;
+    width: 8em;
+    padding-right: .8em;
+    transition: width .5s;
+  }
+  &:hover #text{
+    color: $letters;
+    display: block;
+  }
+  &:hover #pic{
+    background-position: right;
+  }
+}
