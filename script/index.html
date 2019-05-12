@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script type="text/javascript" src="script/script.js" async></script>
+  <script type="text/javascript" src="script/expensesApp.js" async></script>
+  <script type="text/javascript" src="script/labirint.js" async></script>
+</head>
+
+<body>
+
+
+  <nav id='navtop'>
+    <h2 id='navTitle'>Marco Domingues</h2>
+    <input type="checkbox" id="navMenu">
+    <ul id='navBar'>
+      <li class="navBar" id="navHome"><a href="#navTitle"><p id="text">Home</p><div id="pic"></a></li>
+      <li class="navBar" id="navProject"><a href="#expenses-app"><p id="text">Projects</p><div id="pic"></a></li>
+      <li class="navBar" id="navCV"><p id="text">C.V.</p><div id="pic"></div></li>
+      <li class="navBar" id="navContact"><a href=""><p id="text">Contact</p><div id="pic"></a></li>
+    </ul>
+  </nav>
+
+  <section class='section-top'>
+    <h1 id="title-s1">Hi, thank you for visiting my portfolio</h1>
+    <h3 id="subtitle-s1"> This is a bit of me yet in development...</h3>
+    <div id="profile-picture"></div>
+  </section>
+
+  <section id="section-cv">
+    <embed src="items/My CV.pdf" width="80%" height="375"
+ type="application/pdf" id="cv">
+  <span id="close-cv">x</span>
+  </section>
+
+  <section id="expenses-app">
+    <div id="expenses-div">
+      <div id="wrappertotal">
+        <h1 id="htotal">0.00</h1>
+        <span id="spanin">In :</span>
+        <div id="wdivin">
+          <div id="divin"></div>
+        </div>
+        <span id="spantotalin"></span>
+        <span id="spanout">Out :</span>
+        <div id="wdivout">
+          <div id="divout"></div>
+        </div>
+        <span id="spantotalout"></span>
+      </div>
+      <div id="wrapperin">
+        <p id="pin">0.00</p>
+        <input type="number" name="" value="" id="inputin" placeholder="Add income:">
+        <button type="button" name="button" id="buttonin">Add</button>
+        <input type="checkbox" class="hide" id="hidein"/>
+        <div class="list" id="listin">
+          <ul id="incomeul">
+          </ul>
+        </div>
+      </div>
+      <div id="wrapperout">
+        <p id="pout">0.00</p>
+        <input type="number" name="" value="" id="inputout" placeholder="Add expenses:">
+        <button type="button" name="button" id="buttonout">Add</button>
+        <div id="divout"></div>
+        <input type="checkbox" class="hide" id="hideout"/>
+        <div class="list" id="listout">
+          <ul id="outcomeul">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="expenses-text">
+      <h2>Expenses Application</h2>
+      <p>This application was made with HTML, CSS and vanilla JavaScrip</p>
+      <p>The user can input a list of their income and another list with their expenses</p>
+      <p>We give a visual animation to represent the proportion of expenses compared to the income</p>
+      <p>we also give the user the posibillity to extend the list of expenses for more detail and possibility of deleting any input misstyped.</p>
+    </div>
+  </section>
+
+
+  <section id="labirint">
+    <h1>The Labirint</h1>
+    <div id="content">
+      <div class= 'one'>
+        <div id= 'two'>
+          <div id='cover'></div>
+        </div>
+        <div id="finishline">The end</div>
+      </div>
+      <button type="button" id="lantern">Iluminate</button>
+    </div>
+
+    <p>A small game made for fun, where i could experiment with CSS</p>
+    <p>Use the arrows to control the red dot and find the exit.</p>
+  </section>
+</body>
+
+</html>

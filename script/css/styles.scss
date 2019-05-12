@@ -1,0 +1,436 @@
+//sass --watch final/styles.scss:css/styles.css
+@import "reset";
+@import "mixins";
+@import "variables";
+
+
+body {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: $blue3;
+  color: $letters;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* navbar */
+#navtop {
+  height: 3em;
+  padding: 0;
+  margin: 0;
+  #navTitle {
+    position: absolute;
+    top: .5em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .navBar {
+    position: fixed;
+    float: right;
+    list-style: none;
+    background: $blue4;
+    border-radius: 50px;
+    height: 3em;
+    width: 3em;
+    cursor: pointer;
+  }
+  #navBar {
+    display: none;
+  }
+  #navMenu {
+    -webkit-appearance: none;
+    position: fixed;
+    list-style: none;
+    height: 4em;
+    width: 4em;
+    background: $blue4;
+    border-radius: 50%;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+    transition: 0.5s;
+    background-image: url(../items/navlogo.png);
+    background-repeat: no-repeat;
+    background-size: 3em;
+    background-position: center;
+    &:focus {
+      outline: none;
+    }
+  }
+  #navCheckbox::selection {
+    border: none;
+  }
+  #navHome {
+    top: 1em;
+    right: 10em;
+    animation-name: anHome;
+    animation-duration: .5s;
+    #pic{
+      padding: 1.4em;
+      background-image: url();
+      background-size: 2em;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    @include hoverMenu;
+  }
+}
+
+@keyframes anHome {
+  from {
+    transform: translate(9em, .1em)
+  }
+
+  to {
+    transform: translate(0em, 0em)
+  }
+}
+
+#navProject {
+  top: 5em;
+  right: 8.5em;
+  animation-name: anProject;
+  animation-duration: .5s;
+  #pic{
+    padding: 1.4em;
+    background-image: url();
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  @include hoverMenu;
+}
+@keyframes anProject {
+  from {
+    transform: translate(7em, -3.5em)
+  }
+
+  to {
+    transform: translate(0em, 0em)
+  }
+}
+
+#navCV {
+  top: 8em;
+  right: 5.5em;
+  animation-name: anCV;
+  animation-duration: .5s;
+  #pic{
+    padding: 1.4em;
+    background-image: url(../items/CV-icon.png);
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  @include hoverMenu;
+}
+@keyframes anCV {
+  from {
+    transform: translate(4em, -6em)
+  }
+
+  to {
+    transform: translate(0em, 0em)
+  }
+}
+
+#navContact {
+  top: 9.5em;
+  right: 1em;
+  animation-name: anContact;
+  animation-duration: .5s;
+  #pic{
+    padding: 1.4em;
+    background-image: url();
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  @include hoverMenu;
+}
+@keyframes anContact {
+  from {
+    transform: translate(-.3em, -8em)
+  }
+
+  to {
+    transform: translate(0em, 0em)
+  }
+}
+
+/* section */
+.section-top {
+  height: 35em;
+  background-color: $blue2;
+}
+
+
+/* profile picture */
+#profile-picture {
+  background: $blue4;
+  background-image: url(../items/Profile-picture.png);
+  background-size: 10em;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+  width: 10.5em;
+  height: 10.5em;
+  border-radius: 50%;
+  animation: apear 2s;
+}
+
+@keyframes apear {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+#title-s1 {
+  padding: 5em 0em 0em 0em;
+}
+/* CV */
+#section-cv{
+  top:0px;
+  display: none;
+  position: fixed;
+  height: 650px ;
+  width: 100%;
+  background-color: $blue3;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  @include clearFix;
+  z-index: 2;
+  #cv{
+    height: 650px;
+  }
+  #close-cv{
+    font-size: 20px;
+    position: absolute;
+    background-color: $blue2;
+    padding: 3.5px 11px;
+    right: 65px;
+    z-index: 3;
+    border-radius: 50px;
+    border:solid 3px $blue4;
+    cursor: pointer;
+    &:hover{
+      background-color: $blue3;
+    }
+  }
+}
+
+
+/* income/outcome */
+#wrapperin, #wrapperout {
+  display: block;
+  width: 90%;
+  max-width: 380px;
+  margin: 30px auto;
+  border-radius: 10px 10px 0px 10px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 0px 0px 20px 0px;
+  overflow: display;
+  border: 1px solid $blue4;
+}
+
+#wrappertotal {
+  width: 90%;
+  max-width: 380px;
+  margin: 20px auto;
+  border-radius: 10px 10px 0px 10px;
+  box-sizing: border-box;
+  padding: 0 0 20px;
+  overflow: hidden;
+}
+#spanin, #spanout {
+  float: left;
+  font-size: .8em;
+  margin-top: -.1em;
+}
+#spantotalin, #spantotalout {
+  float: right;
+  font-size: .8em;
+  margin: -1.7em 2em 0em 0em;
+}
+#wdivin, #wdivout {
+  background: lightgrey;
+  margin: 5px 10px 10px 30px;
+  height: 10px;
+  width: 250px;
+  border-radius: 4px;
+}
+#divin {
+  background: rgb(61, 173, 79);
+  height: 10px;
+  width: 0em;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: width 2s;
+}
+#divout {
+  background: rgb(231, 65, 65);
+  height: 10px;
+  width: 0em;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: width 2s;
+}
+#inputin, #inputout {
+  clear: both;
+  margin: 20px 0px 20px 30px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  border-radius: 4px 0 0 4px;
+  width: 150px;
+  float: left;
+}
+#buttonin, #buttonout {
+  width: 400px;
+  border: 1px solid $blue4;
+  background: $blue4;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  width: 100px;
+  float: left;
+  margin: 20px 0;
+  color: white;
+}
+
+.list {
+  top: 5em;
+  display:none;
+  clear: both;
+  @include clearFix
+}
+
+.li {
+  /* float: left; */
+  list-style: none;
+  clear: both;
+  margin: .2em 4em 0em 0em;
+}
+.textList{
+  color: $letters;
+  float: left;
+  border: none;
+  height: 1.5em;
+  width: 10em;
+  margin-right:1em ;
+  background-color: $blue3;
+  margin-left: 2em;
+}
+
+.addList{
+  float: right;
+}
+.delete {
+  color: white;
+  float: right;
+  padding: .1em .4em .15em .4em;
+  background-color: $blue4;
+  border-radius: 1em;
+  margin: -.2em 1em 0.1em 1em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.hide {
+  position: relative;
+  top: 78px;
+  left: 13px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $blue4;
+  clip-path: polygon(50% 50%, 0 0%, 100% 0%);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  opacity: .5;
+  &:hover{
+    opacity: 1;
+  }
+  &:checked {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    cursor: pointer;
+    top:70px;
+    left: 10px;
+  }
+}
+
+#hideout:checked{
+  top:75px;
+}
+
+/*  labirint game */
+#labirint{
+  background-color: $blue2;
+  padding-top: 2em;
+  .one {
+    display: block;
+    height: 500px;
+    width:  500px;
+    background-color: rgb(24, 173, 237);
+    background-image: url(../items/map.png);
+    background-size: contain;
+    overflow: hidden;
+    margin:0 auto;
+  }
+  #two{
+    position: relative;
+    height:10px;
+    width: 10px;
+    background-color: red;
+    top: 15px;
+    left: 15px;
+  }
+  #cover{
+    position: relative;
+    height: 1000px;
+    width: 1000px;
+    top: -495px;
+    left: -495px;
+    background: rgb(25,4,68);
+    background: radial-gradient(circle, rgba(25,4,68,0) 4%, rgba(107,19,179,1) 10%, rgba(0,61,255,1) 98%);
+    overflow: hidden;
+  }
+  #lantern{
+    border:none;
+    background-color: white;
+    color:rgb(64, 73, 13);
+    border-radius: 5px;
+    box-shadow:  inset -1px 1px 44px 4px rgba(119,4,102,0.73);
+    height: 40px;
+    width: 100px;
+    margin: 15px 0;
+  }
+  #finishline{
+    position: relative;
+    box-shadow: inset -1px 1px 44px 4px rgba(245, 244, 245, 0.73);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    left: 450px;
+    top:440px;
+    text-align:center;
+    color: rgb(252, 238, 44);
+  }
+}
+
+
+
