@@ -606,6 +606,11 @@ input[type=number]::-webkit-outer-spin-button {
     width: 40%;
   }
 }
+@media (max-width: 500px){
+  #labirint .one {
+    width: 100%;
+  }
+}
 /* towerOfHanoi */
 #towerOfHanoi{
   position: relative;
