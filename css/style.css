@@ -53,6 +53,11 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 0;
   margin: 0;
 }
+@media (max-width: 407px){
+  #navtop{
+    height: 5em;
+  }
+}
 #navtop #navTitle {
   position: absolute;
   top: 0.5em;
